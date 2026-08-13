@@ -26,6 +26,23 @@ Identify potential entry points into a connected vehicle.
 | CAN | Internal | ECU messages | Message injection |
 | Infotainment | Internal/External | Applications/data | Pivot into vehicle network |
 
+### Key Takeaway
+
+The vehicle attack surface consists of both external and internal interfaces.
+
+External interfaces such as Cellular, Wi-Fi, Bluetooth, USB, Key Fob, and TPMS
+can provide potential entry points into the vehicle.
+
+Physical interfaces such as the Diagnostic Port can provide direct access to
+vehicle communication systems.
+
+Internal interfaces such as CAN and Infotainment are important because a
+compromised component may potentially be used to reach other ECUs or vehicle
+functions.
+
+The initial security concerns identified here will be used as inputs for
+threat modeling and TARA activities later in the 90-day learning journey.
+
 ## Questions to Investigate
 
 1. Which interfaces are externally reachable?
