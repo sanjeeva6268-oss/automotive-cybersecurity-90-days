@@ -1,22 +1,56 @@
 # Day 1 — Attack Surface Inventory
 
-## Attack Surface
-Attack Surface is entry point into vehicle considering every way data can enter or communicate with the vehicle. 
+# Automotive Cybersecurity: Attack Surface
 
- examples include: 
- Radio signals : Wireless Communication
- Key fobs : Wireless communication
- Sensors :Inputs from cameras, radar, ultrasonic sensors, temperature sensors, and other vehicle sensors.
- Keypads : User input interfaces that allow commands or authentication.
- Charging : Communication between the vehicle and charging infrastructure, especially in EVs.
- USB : External devices can exchange data with infotainment or other vehicle systems.
- Bluetooth : Wireless communication with smartphones and other nearby devices.
- Diagnostic ports : Interfaces such as OBD-II that provide access for diagnostics and vehicle maintenance.
- GPS : Location and navigation data received from satellite systems.
- Internet connectivity : Cellular, Wi-Fi, and other network connections that allow communication with external systems.
- Infotainment Systems – Interfaces connecting users, smartphones, applications, and vehicle networks.
- Mobile Applications – Smartphone applications that communicate remotely with connected-vehicle services
- V2X Communication – Vehicle-to-Vehicle (V2V), Vehicle-to-Infrastructure (V2I), and other vehicle-to-everything communication.
+## What is an Attack Surface?
+
+An **Attack Surface** is the set of possible **entry points, interfaces, and communication paths** through which data can enter, leave, or interact with a vehicle.
+
+In automotive cybersecurity, we consider **every way data can enter or communicate with the vehicle**, because each interface can potentially introduce security risks.
+
+## Examples of Vehicle Attack Surface
+
+The attack surface of a connected vehicle can include:
+
+* **Radio Signals** – Wireless communication received by the vehicle.
+* **Key Fobs** – Wireless communication used for locking, unlocking, and vehicle access.
+* **Sensors** – Inputs from cameras, radar, ultrasonic sensors, temperature sensors, and other vehicle sensors.
+* **Keypads** – User input interfaces that allow commands or authentication.
+* **Charging Interfaces** – Communication between the vehicle and charging infrastructure, especially in EVs.
+* **USB Ports** – External devices can exchange data with infotainment or other vehicle systems.
+* **Bluetooth** – Wireless communication with smartphones and other nearby devices.
+* **Diagnostic Ports** – Interfaces such as **OBD-II** that provide access for diagnostics and vehicle maintenance.
+* **GPS/GNSS** – Location and navigation data received from satellite systems.
+* **Internet Connectivity** – Cellular, Wi-Fi, and other network connections that allow communication with external systems.
+* **Infotainment Systems** – Interfaces connecting users, smartphones, applications, and vehicle networks.
+* **Mobile Applications** – Smartphone applications that communicate remotely with connected-vehicle services.
+* **V2X Communication** – Vehicle-to-Vehicle (V2V), Vehicle-to-Infrastructure (V2I), and other vehicle-to-everything communication.
+
+### Simple Model
+
+```text
+                    Connected Vehicle
+                           |
+        +------------------+------------------+
+        |                  |                  |
+     Physical           Wireless           Network
+        |                  |                  |
+     USB/OBD           Bluetooth          Internet
+     Keypad            Key Fob            Cellular
+     Charging          Radio              Wi-Fi
+        |                  |                  |
+        +------------------+------------------+
+                           |
+                       Vehicle
+                           |
+                 +---------+---------+
+                 |                   |
+              ECUs              Vehicle Network
+                 |                   |
+               CAN               CAN / LIN
+               ECU               Ethernet
+```
+
 
 ## Purpose
 
